@@ -1,0 +1,25 @@
+
+<mat-toolbar >Login Form</mat-toolbar>
+
+<form class="login-form" [formGroup]="loginForm" (ngSubmit)="loginSubmit()">
+        <strong *ngIf="submitMessage" class="error-message">{{submitMessage}}</strong>
+    <mat-form-field>
+            <input class="username" matInput placeholder="Enter User Name" formControlName="username">
+            <mat-error *ngIf="loginForm.get('username').touched && loginForm.get('username').hasError('required')">
+                Username is Required
+            </mat-error>
+            <mat-error *ngIf="loginForm.get('username').touched && loginForm.get('username').hasError('minlength')">
+                    Username must me minimum 5 characters
+                </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+            <input type="password" class="password" matInput placeholder="Enter password" formControlName="password">
+            <mat-error *ngIf="loginForm.get('password').touched && loginForm.get('password').hasError('required')">
+                    Password is Required
+                </mat-error>
+                <mat-error *ngIf="loginForm.get('password').touched && loginForm.get('password').hasError('minlength')">
+                        password must me minimum 5 characters
+                    </mat-error>
+    </mat-form-field>
+    <button mat-button [disabled]="loginForm.invalid">Submit</button>
+</form>

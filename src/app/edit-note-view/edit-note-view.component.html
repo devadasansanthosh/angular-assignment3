@@ -1,0 +1,33 @@
+<!-- Label to display any error messages -->
+<label class="error-message">{{ errMessage }}</label>
+
+<form class="edit-note-form" [ngFormModel]="noteForm" (ngSubmit)="editSaveNote(noteForm)">
+    
+<mat-form-field>
+        <input matInput placeholder="Enter Title" [control]="noteForm.controls.title" name="editTitle">
+        <mat-error *ngIf="noteForm.get('noteForm.controls.title').touched && noteForm.get('noteForm.controls.title').hasError('required')">
+            Title is Required
+        </mat-error>
+        <mat-error *ngIf="noteForm.get('noteForm.controls.title').touched && noteForm.get('noteForm.controls.title').hasError('minlength')">
+                Title must me minimum 5 characters
+            </mat-error>
+</mat-form-field>
+<mat-form-field>
+    <textarea matInput placeholder="Enter Text" formControlName="noteForm.controls.text" name="editText"></textarea>
+        <mat-error *ngIf="noteForm.get('noteForm.controls.text').touched && noteForm.get('noteForm.controls.text').hasError('required')">
+                Text is Required
+            </mat-error>
+            <mat-error *ngIf="noteForm.get('noteForm.controls.text').touched && noteForm.get('noteForm.controls.text').hasError('minlength')">
+                    Text must me minimum 5 characters
+                </mat-error>
+</mat-form-field>
+<!--mat-form-field>
+        <mat-label>Status</mat-label>
+        <mat-select matNativeControl required matInput placeholder="Status" formControlName="editStatus" name="editText">
+          <option value="not-started">Not Started</option>
+          <option value="started">Started</option>
+          <option value="completed">Completed</option>
+          </mat-select>
+      </mat-form-field-->
+<button mat-button [disabled]="noteForm.invalid">Save</button>
+</form>

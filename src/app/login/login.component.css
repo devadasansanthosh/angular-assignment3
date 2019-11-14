@@ -1,0 +1,25 @@
+mat-toolbar{
+    flex-direction: column;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 5vh auto;
+    flex-flow: row;
+    width: 80vw;
+}
+mat-form-field{
+    flex-direction: row;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    width: 80vw;
+}
+button{
+    flex-direction: column;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 5vh auto;
+    flex-flow: row;
+    width: 80vw;
+}

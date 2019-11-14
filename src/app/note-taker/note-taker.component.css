@@ -1,0 +1,35 @@
+mat-expansion-panel{
+    width: 60vw;
+    margin: 5vh auto;
+}
+mat-form-field{
+    display: flex;
+    flex-direction: column; 
+}
+.button-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+.note-card{
+    margin: 1em;
+}
+.notes-container{
+    width:60vw;
+    margin:5vh auto;
+  }
+.note-taker-form-container{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .notes-card-container{
+    margin:5vh;
+    display: flex;
+    flex-direction: row;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  
